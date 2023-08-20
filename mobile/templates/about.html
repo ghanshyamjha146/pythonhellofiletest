@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+
+
+<head>
+	<title>About Page</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.navbar {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: sticky;
+			top: 0;
+			cursor: pointer;
+		}
+
+		.background {
+			background: blue;
+			background-blend-mode: darken;
+			background-size: cover;
+		}
+
+		.nav-list {
+			width: 70%;
+			display: flex;
+			align-items: center;
+		}
+
+		.logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.logo img {
+			width: 180px;
+			border-radius: 50px;
+		}
+
+		.nav-list li {
+			list-style: none;
+			padding: 26px 30px;
+		}
+
+		.nav-list li a {
+			text-decoration: none;
+			color: white;
+		}
+
+		.nav-list li a:hover {
+			color: grey;
+		}
+
+		.rightnav {
+			width: 30%;
+			text-align: right;
+		}
+
+		#search {
+			padding: 5px;
+			font-size: 17px;
+			border: 2px solid grey;
+			border-radius: 9px;
+		}
+
+		.firstsection {
+			background-color: green;
+			height: 400px;
+		}
+
+		.secondsection {
+			background-color: blue;
+			height: 400px;
+		}
+
+		.box-main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: black;
+			max-width: 80%;
+			margin: auto;
+			height: 80%;
+		}
+
+		.firsthalf {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.secondhalf {
+			width: 30%;
+		}
+
+		.secondhalf img {
+			width: 70%;
+			border: 4px solid white;
+			border-radius: 150px;
+			display: block;
+			margin: auto;
+		}
+
+		.text-big {
+			font-family: 'Piazzolla', serif;
+			font-weight: bold;
+			font-size: 35px;
+		}
+
+		.text-small {
+			font-size: 18px;
+		}
+
+		.btn {
+			padding: 8px 20px;
+			margin: 7px 0;
+			border: 2px solid white;
+			border-radius: 8px;
+			background: none;
+			color: white;
+			cursor: pointer;
+		}
+
+		.btn-sm {
+			padding: 6px 10px;
+			vertical-align: middle;
+		}
+
+		.section {
+			height: 400px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 90%;
+			margin: auto;
+		}
+
+		.section-Left {
+			flex-direction: row-reverse;
+		}
+
+		.paras {
+			padding: 0px 65px;
+		}
+
+		.thumbnail img {
+			width: 250px;
+			border: 2px solid black;
+			border-radius: 26px;
+			margin-top: 19px;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.text-footer {
+			text-align: center;
+			padding: 20px ;
+			font-family: 'Ubuntu', sans-serif;
+			display: flex;
+			justify-content: center;
+			color: white;
+		}
+		footer {
+		   position: fixed;
+		   bottom: 0;
+		   width: 100%;
+		   height: 40px;   /* Height of the footer */
+		   background: #6cf;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar background">
+		<ul class="nav-list">
+			<div class="logo1">
+					<img src="{% static '/images/images.jpg' %}" alt="My image" width="50" height="50">
+
+					<p>Date/Time: <span id="datetime"></span></p>
+
+					<script>
+					var dt = new Date();
+					document.getElementById("datetime").innerHTML = dt.toLocaleString();
+					</script>
+
+			</div>
+
+		</ul>
+
+		<div class="rightNav">
+			<input type="text" name="search" id="search">
+			<button class="btn btn-sm">Search</button>
+		</div>
+	</nav>
+
+	<section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="web">Why Sell On Ghanshi?</h1>
+				<p class="text-small">
+					Ghanshi allows you to sell old phones, laptops and other gadgets for instant cash,
+                    and you can use this money to purchase newer and better models.
+                    In addition, Ghanshi has partnered with several top brands in the country,
+                    including Apple, Samsung, Xiaomi, Oppo, Vivo, Amazon, Nokia, Vijay Sales,
+                    Reliance Digital, Hp, OnePlus, Dell, Realme and more, for offline and online exchange offers.
+				</p>
+            <div class="thumbnail">
+					<img src="{% static '/images/apple-iphone-13-128-gb-blue-4-gb-ram-.jpg' %}" alt="My image" width="100" height="150">
+		    </div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="secondsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="program">About Ghanshi</h1>
+				<p class="text-small">
+					Ghanshi algorithmically generated price quotes are the fairest in the industry.
+                    All Ghanshi needs is certain details about your old phone’s condition,
+                    age, model number, and warranty period, and you’re good to go.
+
+				</p>
+                 <div class="thumbnail">
+					<img src="{% static '/images/newimages.jfif' %}" alt="My image" width="100" height="150">
+		    </div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="paras">
+			<h1 class="sectionTag text-big">What Ghanshi Will Offer You</h1>
+
+			<p class="sectionSubTag text-small">
+				Based on this data, Ghanshi will offer you the ideal cash value if you sell old phones,
+                laptops or gadgets. We have an exclusive home pickup facility for mobile phones.
+                So all you have to do is book an appointment at your comfortable time,
+                and our representative will reach out to you. There’s no haggling, no having to step out of your home,
+                and the entire process can be completed in the shortest possible time.
+                You can sell almost all mobile phone brands available in India along with popular laptop,
+                tablet and gaming console brands. There are more than 20 mobile phone brands listed on Ghanshi
+                and for all devices sold on Ghanshi, we offer -
+
+
+                - Assured sale at best price
+                - Hassle free
+                - Free home pick up
+                - Instant cash payment on pickup
+
+
+			</p>
+		<div class="thumbnail">
+					<img src="{% static '/images/new44444.jfif' %}" alt="My image" width="100" height="150">
+		</div>
+
+		</div>
+
+
+	</section>
+
+<!--    	<div class="thumbnail">-->
+<!--					<img src="{% static '/images/IMG-20230717-WA0000.jpg' %}" alt="My image" width="100" height="150">-->
+<!--		</div>-->
+
+	<footer class="background">
+		<p class="text-footer">
+			Copyright ©-All rights are reserved
+		</p>
+
+
+	</footer>
+</body>
+
+</html>

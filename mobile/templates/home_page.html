@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+
+
+<head>
+	<title>Home Page</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.navbar {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: sticky;
+			top: 0;
+			cursor: pointer;
+		}
+
+		.background {
+			background: blue;
+			background-blend-mode: darken;
+			background-size: cover;
+		}
+
+		.nav-list {
+			width: 70%;
+			display: flex;
+			align-items: center;
+		}
+
+		.logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.logo img {
+			width: 180px;
+			border-radius: 50px;
+		}
+
+		.nav-list li {
+			list-style: none;
+			padding: 26px 30px;
+		}
+
+		.nav-list li a {
+			text-decoration: none;
+			color: white;
+		}
+
+		.nav-list li a:hover {
+			color: grey;
+		}
+
+		.rightnav {
+			width: 30%;
+			text-align: right;
+		}
+
+		#search {
+			padding: 5px;
+			font-size: 17px;
+			border: 2px solid grey;
+			border-radius: 9px;
+		}
+
+		.firstsection {
+			background-color: green;
+			height: 400px;
+		}
+
+		.secondsection {
+			background-color: blue;
+			height: 400px;
+		}
+
+		.box-main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: black;
+			max-width: 80%;
+			margin: auto;
+			height: 80%;
+		}
+
+		.firsthalf {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.secondhalf {
+			width: 30%;
+		}
+
+		.secondhalf img {
+			width: 70%;
+			border: 4px solid white;
+			border-radius: 150px;
+			display: block;
+			margin: auto;
+		}
+
+		.text-big {
+			font-family: 'Piazzolla', serif;
+			font-weight: bold;
+			font-size: 35px;
+		}
+
+		.text-small {
+			font-size: 18px;
+		}
+
+		.btn {
+			padding: 8px 20px;
+			margin: 7px 0;
+			border: 2px solid white;
+			border-radius: 8px;
+			background: none;
+			color: white;
+			cursor: pointer;
+		}
+
+		.btn-sm {
+			padding: 6px 10px;
+			vertical-align: middle;
+		}
+
+		.section {
+			height: 400px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 90%;
+			margin: auto;
+		}
+
+		.section-Left {
+			flex-direction: row-reverse;
+		}
+
+		.paras {
+			padding: 0px 65px;
+		}
+
+		.thumbnail img {
+			width: 250px;
+			border: 2px solid black;
+			border-radius: 26px;
+			margin-top: 19px;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.text-footer {
+			text-align: center;
+			padding: 20px 0;
+			font-family: 'Ubuntu', sans-serif;
+			display: flex;
+			justify-content: center;
+			color: white;
+		}
+		footer {
+		   position: fixed;
+		   bottom: 0;
+		   width: 100%;
+		   height: 40px;   /* Height of the footer */
+		   background: #6cf;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar background">
+		<ul class="nav-list">
+			<div class="logo1">
+					<img src="{% static '/images/images.jpg' %}" alt="My image" width="50" height="50">
+
+					<p>Date/Time: <span id="datetime"></span></p>
+
+					<script>
+					var dt = new Date();
+					document.getElementById("datetime").innerHTML = dt.toLocaleString();
+					</script>
+
+			</div>
+			<li><a href="/mobile/about">About</a></li>
+			<li><a href="/mobile/signup">Signup</a></li>
+			<li><a href="/mobile/login">Login</a></li>
+		</ul>
+
+		<div class="rightNav">
+			<input type="text" name="search" id="search">
+			<button class="btn btn-sm">Search</button>
+		</div>
+	</nav>
+
+	<section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="web">ANDROID</h1>
+				<p class="text-small">
+					YOU CAN SELL ANDROID PHONE
+				</p>
+				<div class="thumbnail">
+					<img src="{% static '/images/android_images.jpg' %}" alt="My image" width="80" height="200">
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="secondsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="program">APPLE</h1>
+				<p class="text-small">
+					YOU CAN SELL APPLE PHONE
+
+				</p>
+				 <div class="thumbnail">
+					<img src="{% static '/images/apple_images.jpg' %}" alt="My image" width="80" height="200">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="paras">
+			<h1 class="sectionTag text-big">NOKIA</h1>
+
+			<p class="sectionSubTag text-small">
+				YOU CAN SELL NOKIA PHONE
+
+			</p>
+
+       <div class="thumbnail">
+					<img src="{% static '/images/nokia_images.jpg' %}" alt="My image" width="80" height="200">
+		</div>
+		</div>
+
+
+	</section>
+
+
+	<footer class="background">
+		<p class="text-footer">
+			Copyright ©-All rights are reserved
+		</p>
+
+
+	</footer>
+</body>
+
+</html>
